@@ -1,0 +1,61 @@
+sudo add-apt-repository ppa:gwendal-lebihan-dev/cinnamon-stable
+sudo apt-get update && sudo apt-get upgrade
+sudo apt-get install cinnamon
+
+
+
+
+
+
+sudo apt-get install mysql-server-5.1 apache2 php5 php5-mysql libapache2-mod-auth-mysql
+
+
+http://www.garabatoslinux.net/instalando-apache-mysql-php-joomla-2-5-en-ubuntu-12-04.html
+sudo apt-get install apache2
+	
+sudo /etc/init.d/apache2 start
+sudo /etc/init.d/apache2 stop
+
+sudo apt-get install php5 libapache2-mod-php5 php5-cli php5-mysql
+sudo /etc/init.d/apache2 restart
+sudo nano /var/www/correcto.php
+<?php phpinfo(); ?>
+sudo apt-get install mysql-server
+SET PASSWORD FOR 'root'@'localhost' = PASSWORD('nueva_contraseña');
+sudo apt-get install phpmyadmin
+
+
+
+
+
+http://itekzone.blogspot.com/2012/06/sublime-text-2-final-released-inc-patch.html
+sudo add-apt-repository ppa:webupd8team/sublime-text-2
+sudo apt-get update
+sudo apt-get install sublime-text
+
+Follow these to fully and effectively register sublime text 2 in ubuntu
+1.Install ghex editor.(in terminal,enter "sudo apt-get install ghex")..without the quotes.
+2.In terminal enter "cd /usr/lib/sublime-text-2"
+3.In terminal enter "sudo ghex sublime_text" & enter your password
+4.In open ghex window,navigate to Edit>Replace.
+5.In the find string section enter 33 42
+6.In the replace with section enter 32 42
+7.save and exit.
+8.run sublime text and regiter with this:
+-----BEGIN LICENSE-----
+Patrick Carey
+Unlimited User License
+EA7E-18848
+4982D83B6313800EBD801600D7E3CC13
+F2CD59825E2B4C4A18490C5815DF68D6
+A5EFCC8698CFE589E105EA829C5273C0
+C5744F0857FAD2169C88620898C3845A
+1F4521CFC160EEC7A9B382DE605C2E6D
+DE84CD0160666D30AA8A0C5492D90BB2
+75DEFB9FD0275389F74A59BB0CA2B4EF
+EA91E646C7F2A688276BCF18E971E372
+-----END LICENSE-----
+
+
+
+

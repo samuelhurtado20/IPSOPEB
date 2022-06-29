@@ -1,0 +1,185 @@
+Aquí vemos unos ejemplos de uso:
+
+1. Sólo caracteres alfanuméricos:
+
+$('.campo1').alphanumeric();
+
+2. Sólo caracteres alfanuméricos, coma (,) punto (.) y espacio ( ):
+
+$('.campo2').alphanumeric({allow:"., "});
+
+3. Sólo aceptará letras minúsculas:
+
+$('.campo3').alpha({nocaps:true});
+
+4. Sólo números:
+
+$('.campo4').numeric();
+
+5. Sólo números y punto (.):
+
+$('.campo5').numeric({allow:"."});
+
+6. Regla personalizada que evita caractreres como punto (.), uno (1) y a (a)
+
+$('.campo6').alphanumeric({ichars:'.1a'});
+
+
+<div bgcolor='#b4b4b4'>
+		<form action='buscar_criterio.php' id="b-nombre" method='post'>
+			<label>CONSULTAR POR NOMBRE O APELLIDO:</label>		
+				<input type='text' name="buscar1" class="solo-letras">
+				<input type='submit' value='buscar' class='btn btn-otro'>			
+		</form>
+</div>
+
+
+<button type="submit" class='btn btn-otro'><img src="img/ver.ico" /></button>
+
+
+http://www.clubdesarrolladores.com/articulos/mostrar/49-guia-de-adodb-para-desarrollos-portables
+
+
+$id_max = $db->Execute("$query2"); //sintaxis de la consulta
+			$cortar = split(")",$id_max);
+			$minumero = $cortar[1];
+			//echo $minumero; //imprime el numero
+
+
+
+			http://linuxmanr4.com/2012/04/25/script-para-respaldar-todas-las-bases-de-datos-de-un-servidor-mysql/
+
+echo $backupFile = 'respaldo' . date("d-m-Y-H-i-s") . '.sql';
+$command = "mysqldump -h127.0.0.1 -u root -p18623532 --all-databases  > respaldos/$backupFile";
+system($command);
+
+	<form action='operaciones.php' method='post' id='respaldar2' style="display:none;">
+	<table bgcolor="#777777" width='100%'>
+		<tr><td width='50%'><label>generar respaldo comprimido en zip:</label></td>
+			<td>	<input type='hidden' name='comprimir' value="zip">
+					<input type='hidden' name='accion' value="RESPALDAR">
+					<input type='submit' value='respaldar la base de datos(.zip)' class='btn btn-otro'>
+				
+			</td>
+		</tr>
+	</table>
+	</form>
+
+
+
+	if ($comprimir=='zip'){
+					$backupFile = 'respaldo' . date("d-m-Y-h-i-s") . '.sql.zip';
+					$command = "mysqldump -h127.0.0.1 -u root -p18623532 --all-databases | zip > respaldos/zip/$backupFile";
+				}
+
+
+				if ($comp=='gzip'){
+					$command = "gz < $archivo | mysql -h127.0.0.1 -uroot -p18623532";
+					system($command,$resultado);
+					if (!$resultado)
+						print_r("<span class='exito'>se relalizo la restauracion gzip con exito</span>");
+					else print_r("<span class='fallida'>error al realizar la restauracion gzip ".$respaldo."</span><br>");
+				}
+
+
+				if ($comprimir=='gzip'){
+					$backupFile = 'respaldo' . date("d-m-Y-h-i-s") . '.sql.gz';
+					$command = "mysqldump -h127.0.0.1 -u root -p18623532 --all-databases | gzip > respaldos/gzip/$backupFile";
+				}
+
+
+
+					<form action='operaciones.php' method='post' id='restaurar2'>
+	<table bgcolor="#777777"  width='100%'>
+		<tr><td width='50%'><label>selecionar respaldo a restaurar:</label>
+			
+					<?php
+						$directorio=opendir('respaldos/gzip'); 
+						$carpeta = @scandir('respaldos/gzip');
+						$num = count($carpeta);
+						if ($num < 3){
+						    echo "<br><br><span class='fallida'>no existen respaldos</span><br><br> ";
+						} 
+							    while ($archivo = readdir($directorio)){
+									if (($archivo!='.') and ($archivo!='..')){
+										echo "<br><input type='radio' name='archivo' value='respaldos/gzip/$archivo'>";
+										echo "$archivo"; 
+									}
+								}
+						closedir($directorio);							
+					?> 
+		</td>
+			<td >	<input type='hidden' name='accion' value="RESTAURAR">
+					<input type='hidden' name='comp' value="gzip">
+					<input type='submit' value='restaurar la base de datos(.gzip)' class='btn btn-otro'>
+				
+			</td>
+		</tr>
+	</table>
+	</form>
+
+
+
+
+
+	<form action='operaciones.php' method='post' id='respaldar3'>
+	<table bgcolor="#777777" width='100%'>
+		<tr><td width='50%'><label>generar respaldo comprimido en gzip:</label></td>
+			<td>	<input type='hidden' name='comprimir' value="gzip">
+					<input type='hidden' name='accion' value="RESPALDAR">
+					<input type='submit' value='respaldar la base de datos(.gzip)' class='btn btn-otro'>
+				
+			</td>
+		</tr>
+	</table>
+	</form>
+
+
+	http://www.linuxtotal.com.mx/index.php?cont=info_admon_021
+	http://mundogeek.net/archivos/2007/05/10/descomprimir-archivos-en-linux-desde-la-consola/
+
+
+	INSERT INTO `ipsopeb`.`transacciones` (`id_t` ,`usuario` ,`accion` ,`id_afectado` ,`fecha_accion`)VALUES (NULL , 'root', 'cambio', '1',CURRENT_TIMESTAMP);
+
+
+	header ("Location: index.php");
+
+
+
+	<?php
+include_once ("conex.php");
+if (!isset($_SESSION["autenticado"]) or !isset($_SESSION["tipo"]) or !isset($_SESSION["usuario"])) {header("Location: index.php?error=2"); }
+include_once ('header.php');
+?>
+
+
+<?php
+ $cadena_ejemplo = "PHP de Venezuela";
+ echo 'Cadena Original: '.$cadena_ejemplo;
+ 
+ $cifrado =crypt($cadena_ejemplo,"PH");
+ echo '<br>Cadena cifrada con crypt: '.$cifrado;
+ 
+ $cifrado2 = md5($cadena_ejemplo);
+  echo '<br>Cadena cifrada con md5: '.$cifrado2;
+ 
+  $cifrado3=  crc32($cadena_ejemplo);
+  echo '<br>Cadena cifrada con crc32: '.$cifrado3;
+  
+  $cifrado4=  base64_encode($cadena_ejemplo);
+  echo '<br>Cadena cifrada con base64_encode: '.$cifrado4;
+  
+  $cifrado5 =  crypt(md5(crc32(base64_encode ($cadena_ejemplo))),"PH");
+  echo '<br>Cadena cifrada con todas: '.$cifrado5;  
+  
+?>
+
+
+<?php
+   // Funciones  mkdir / chmod / rmdir
+    $carpeta = 'nueva'; 
+	$carpeta='carpeta/'.$carpeta;
+	mkdir ($carpeta, 0777); // Crear la carpeta
+	chmod( $carpeta, 0777);  // Cambia a modo 777 - Permiso de escritura y lectura
+	print 'Carpeta en el camino: '.$carpeta.' ha sido creada!';
+?>
